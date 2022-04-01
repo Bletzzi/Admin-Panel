@@ -6,6 +6,11 @@ import time
 import json
 import createserver
 
+def checkServerStatus():
+    print("Checking Server Status...")
+    time.sleep(1)
+    subprocess.call(["screen", "-S", "spigot", "-X", "stuff", "screen -S spigot -X stuff 'echo \"Server is running!\"\n'"])
+
 def createSpigot():
     print("Creating Spigot Server...")
     time.sleep(1)
@@ -17,5 +22,5 @@ def createSpigot():
     subprocess.call(["screen", "-S", "spigot", "-X", "stuff", "java -Xmx1024M -Xms1024M -jar spigot.jar nogui\n"])
     #wait for the server to start
     time.sleep(5)
-    #check if the server is running
-    subprocess.call(["screen", "-S", "spigot", "-X", "stuff", "screen -S spigot -X stuff 'echo \"Server is running!\"\n'"])
+    #check the server status
+    checkServerStatus()
