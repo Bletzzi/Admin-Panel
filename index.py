@@ -37,7 +37,7 @@ def main():
     if choice == "1":
         createServer()
     elif choice == "2":
-        manageServer()
+        print("Coming soon!")
     elif choice == "3":
         sys.exit()
     else:
